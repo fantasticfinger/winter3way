@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:winter_3way/component/avatar_widget.dart';
+import 'package:winter_3way/component/post_widget.dart';
 
 import '../component/image_data.dart';
 
@@ -64,6 +65,11 @@ class Home extends StatelessWidget {
                   'https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg'),
         ),
       ]),
+    );
+  }
+
+  Widget _postList(){
+    return Column(children: List.generate(50, (index) => const PostWidget()).toList(),
     );
   }
 

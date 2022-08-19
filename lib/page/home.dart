@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:winter_3way/component/avatar_widget.dart';
+import 'package:winter_3way/component/post_widget.dart';
 
 import '../component/image_data.dart';
 
@@ -67,6 +68,11 @@ class Home extends StatelessWidget {
     );
   }
 
+  Widget _postList(){
+    return Column(children: List.generate(50, (index) => const PostWidget()).toList(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,6 +92,7 @@ class Home extends StatelessWidget {
         body: ListView(
           children: [
             _storyBoardList(),
+            _postList(),
           ],
         ));
   }

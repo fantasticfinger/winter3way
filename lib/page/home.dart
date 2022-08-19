@@ -70,23 +70,24 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          title: ImageData(IconsPath.logo, width: 270),
-          actions: [
-            GestureDetector(
-              onTap: () {},
-              child: ImageData(
-                IconsPath.directMessage,
-                width: 50,
-              ),
+      appBar: AppBar(
+        elevation: 0,
+        title: ImageData(IconsPath.logo, width: 270),
+        actions: [
+          GestureDetector(
+            onTap: () {},
+            child: ImageData(
+              IconsPath.directMessage,
+              width: 50,
             ),
-          ],
-        ),
-        body: ListView(
-          children: [
-            _storyBoardList(),
-          ],
-        ));
+          ),
+        ],
+      ),
+      body: ListView(
+        children: [
+          _storyBoardList(),
+        ],
+      ),
+    );
   }
 }

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../component/message_popup.dart';
 import '../page/upload.dart';
 
-enum PageName { HOME, SAERCH, UPLOAD, ACTIVITY, MYPAGE }
+enum PageName { HOME, UPLOAD, MYPAGE }
 
 class BottomNavController extends GetxController {
   RxInt pageIndex = 0.obs;

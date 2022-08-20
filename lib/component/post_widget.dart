@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../page/post_detail_screen.dart';
+import 'package:winter_3way/component/post_common_widget.dart';
 
 class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);
@@ -15,19 +16,6 @@ class PostWidget extends StatelessWidget {
       ],
     );
   }
-  Widget _content(){
-    return textWidget('테스트 내용입니다\n테스트 내용입니다\n테스트 내용입니다\n', contentStyle);
-  }
-  Widget _title(){
-    return textWidget('테스트 제목입니다', titleStyle);
-  }
-
-  final TextStyle titleStyle= const TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 20);
-  final TextStyle contentStyle= const TextStyle(
-      fontWeight: FontWeight.normal,
-      fontSize: 15);
 
   @override
   Widget build(BuildContext context) {
@@ -46,5 +34,12 @@ class PostWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _title(){
+    return textWidget('테스트 제목입니다', titleStyle);
+  }
+  Widget _content(){
+    return textWidget('테스트 내용입니다\n테스트 내용입니다\n테스트 내용입니다\n', contentStyle);
   }
 }

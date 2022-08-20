@@ -4,6 +4,7 @@ import 'package:winter_3way/controller/bottom_nav_controller.dart';
 import 'package:get/get.dart';
 
 import '../page/home.dart';
+import '../page/mypage.dart';
 
 class App extends GetView<BottomNavController> {
   const App({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class App extends GetView<BottomNavController> {
               children: [
                 const Home(),
                 Container(child: Center(child: Text('UPLOAD'))),
-                Container(child: Center(child: Text('MYPAGE'))),
+                const MyPage(),
               ],
             ),
             backgroundColor: Colors.white,

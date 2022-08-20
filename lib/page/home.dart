@@ -18,16 +18,15 @@ class Home extends StatelessWidget {
           100,
           (index) => AvatarWidget(
               type: AvatarType.RED,
-              thumbPath:
-                  'https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg'),
-        ),
+              thumbPath: 'https://creatip.co.kr/wp-content/uploads/2019/03/vivaldi-logo.jpg'
+          ),
+        )
       ]),
     );
   }
 
   Widget _postList(){
-    return Column(children: List.generate(50, (index) => const PostWidget()).toList(),
-    );
+    return Column(children: List.generate(50, (index) => const PostWidget()).toList(),);
   }
 
   @override
@@ -49,7 +48,10 @@ class Home extends StatelessWidget {
       body: ListView(
         children: [
           _storyBoardList(),
-          _postList(),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child:_postList(),
+          ),
         ],
       ),
     );

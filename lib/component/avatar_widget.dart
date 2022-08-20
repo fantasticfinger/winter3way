@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-enum AvatarType { TYPE1, TYPE2, TYPE3 }
+enum AvatarType { GREEN, YELLOW, RED }
 
 class AvatarWidget extends StatelessWidget {
-  bool? hasStroy;
   String thumbPath;
   String? nickName;
   AvatarType type;
@@ -14,28 +13,35 @@ class AvatarWidget extends StatelessWidget {
     Key? key,
     required this.type,
     required this.thumbPath,
-    this.hasStroy,
     this.nickName,
     this.size = 60,
   }) : super(key: key);
 
-  Widget type1Widget() {
+  @override
+  Widget build(BuildContext context) {
+    switch (type) {
+      case AvatarType.GREEN:
+        return greenWidget();
+      case AvatarType.YELLOW:
+        return yellowWidget();
+      case AvatarType.RED:
+        return redWidget();
+    }
+  }
+
+  Widget trafficWidget(Color color) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 3),
-      padding: const EdgeInsets.all(2),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [Colors.purple, Colors.orange],
-        ),
+      padding: const EdgeInsets.all(3),
+      decoration: BoxDecoration(
+        color: color,
         shape: BoxShape.circle,
       ),
-      child: type2Widget(),
+      child: innerThumbnailWidget(),
     );
   }
 
-  Widget type2Widget() {
+  Widget innerThumbnailWidget() {
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: const BoxDecoration(
@@ -56,30 +62,13 @@ class AvatarWidget extends StatelessWidget {
     );
   }
 
-  Widget type3Widget() {
-    return Row(
-      children: [
-        type1Widget(),
-        Text(
-          nickName ?? '',
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
-        ),
-      ],
-    );
+  Widget greenWidget(){
+    return trafficWidget(Colors.green);
   }
-
-  @override
-  Widget build(BuildContext context) {
-    switch (type) {
-      case AvatarType.TYPE1:
-        return type1Widget();
-      case AvatarType.TYPE2:
-        return type2Widget();
-      case AvatarType.TYPE3:
-        return type3Widget();
-    }
+  Widget yellowWidget() {
+    return trafficWidget(Colors.yellow);
+  }
+  Widget redWidget() {
+    return trafficWidget(Colors.red);
   }
 }

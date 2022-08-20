@@ -85,7 +85,8 @@ class PostDetailScreen extends StatelessWidget {
   }
   Widget _commentList(){
     return Column(children: List.generate(50, (index) => Column(
-      children: const [
+      children:
+      const [
         Padding(padding: EdgeInsets.only(top:10), child: CommentWidget(Colors.teal)),
         Padding(padding: EdgeInsets.only(left: 10), child: CommentWidget(Colors.cyan))
       ],
